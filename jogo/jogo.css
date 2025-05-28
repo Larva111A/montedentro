@@ -18,23 +18,44 @@ h2 {
 .downloads {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  margin-top: 20px;
+  gap: 20px; /* Menor espaço entre os blocos */
+
   flex-wrap: wrap;
 }
 
 .downloads div {
   background-color: white;
-  padding: 15px 25px;
+  padding: 0px 15px;
   border-radius: 10px;
   box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-  width: 250px;
+  width: 200px;
+  height: 120px; /* Menor altura */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
 }
 
 .downloads h3 {
   font-size: 1em;
-  margin-bottom: 10px;
+  
+  flex-grow: 1; /* Ocupa o espaço restante */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
+
+.downloads a {
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+
+  text-align: center;
+}
+
+
 
 a {
   color: blue;
@@ -46,22 +67,25 @@ a:hover {
   text-decoration: underline;
 }
 
+
 img {
-  margin-top: 30px;
-  max-width: 300px;
-  height: auto;
+  margin-top: 20px;
+  margin-bottom: 10px; /* Aproxima da secção de downloads */
+  max-width: 250px;
 }
 
 div:last-of-type a {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 20px; /* Aumentado de 20px para 50px */
   font-size: 0.9em;
 }
+
+
 .patrocinio {
   position: fixed;
   bottom: 10px;
   right: 10px;
-  width: 280px; /* Aumentado de 120px para 180px */
+  width: 280px;
   z-index: 1000;
 }
 
@@ -70,4 +94,19 @@ div:last-of-type a {
   height: auto;
   border-radius: 8px;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.voltar {
+  margin-top: 60px;
+}
+
+.voltar a {
+  font-size: 1em;
+  font-weight: bold;
+  color: blue;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.voltar a:hover {
+  text-decoration: underline;
 }
