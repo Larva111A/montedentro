@@ -1,35 +1,68 @@
+/* style.css */
+
 body {
-font-family: Arial, sans-serif;
-background-color: #8d8d8d;
-text-align: center;
-padding: 50px;
+  background-color: #d3d3d3;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+  color: #333;
 }
 
 h1 {
-color: #333;
+  font-size: 3em;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
 p {
-color: #666;
+  font-size: 1.2em;
+  margin-top: 10px;
 }
+
 .logo {
-width: 250px;
-height: 200px;
+  margin: 30px auto;
+  max-width: 300px;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
 }
 
 .links-flex {
-display: flex;
-justify-content: center;
-gap: 40px;
-margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 40px;
 }
 
-a {
-display: inline-block;
-color: #007BFF;
-text-decoration: none;
-margin-top: 0;
+.links-flex a {
+  display: inline-block;
+  background-color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #1a1a8e;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s, color 0.3s;
 }
-a:hover {
-    color: #0059b3;
+
+.links-flex a:hover {
+  background-color: #f0f0f0;
+  color: #000066;
+}
+.patrocinio {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 280px; /* Aumentado de 120px para 180px */
+  z-index: 1000;
+}
+
+.patrocinio img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
 }

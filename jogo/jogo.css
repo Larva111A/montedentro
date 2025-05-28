@@ -57,3 +57,17 @@ div:last-of-type a {
   margin-top: 20px;
   font-size: 0.9em;
 }
+.patrocinio {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 280px; /* Aumentado de 120px para 180px */
+  z-index: 1000;
+}
+
+.patrocinio img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
