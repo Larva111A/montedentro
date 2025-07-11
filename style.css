@@ -1,68 +1,102 @@
-/* style.css */
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  background-color: gray;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f8;
   color: #333;
+  padding: 2rem;
+  line-height: 1.6;
 }
 
+/* Cabeçalho principal */
 h1 {
-  font-size: 3em;
-  font-weight: bold;
-  margin-top: 20px;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1e2a38;
 }
 
-p {
-  font-size: 1.2em;
-  margin-top: 10px;
-}
-
+/* Logo */
 .logo {
-  margin: 30px auto;
-  max-width: 300px;
-  height: auto;
   display: block;
-  border-radius: 10px;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  margin: 0 auto 1.5rem auto;
+  max-width: 200px;
+  height: auto;
 }
 
+/* Parágrafo de introdução */
+p {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Links de navegação */
 .links-flex {
   display: flex;
   justify-content: center;
+  gap: 1.5rem;
   flex-wrap: wrap;
-  gap: 30px;
-  margin-top: 40px;
+  margin-bottom: 3rem;
 }
 
 .links-flex a {
-  display: inline-block;
-  background-color: white;
-  padding: 15px 25px;
-  border-radius: 10px;
   text-decoration: none;
-  font-weight: bold;
-  color: #1a1a8e;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-  transition: background-color 0.3s, color 0.3s;
+  color: white;
+  background-color: #2e86de;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Animação ao passar o cursor */
 .links-flex a:hover {
-  background-color: #f0f0f0;
-  color: #000066;
+  background-color: #1e5f9b;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+
+/* Imagem de patrocínio fixa */
 .patrocinio {
   position: fixed;
   bottom: 10px;
   right: 10px;
-  width: 280px; /* Aumentado de 120px para 180px */
+  width: 280px;
   z-index: 1000;
 }
 
 .patrocinio img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.patrocinio img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .links-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .links-flex a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .patrocinio {
+    width: 90%;
+    right: 5%;
+  }
 }

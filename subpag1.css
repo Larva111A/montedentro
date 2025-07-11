@@ -5,81 +5,143 @@
   box-sizing: border-box;
 }
 
-/* Fonte padrão */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: gray ;
+  background: #f4f6f8;
   color: #333;
-  padding: 20px;
-  text-align: center;
+  padding: 2rem;
+  line-height: 1.6;
 }
 
-/* Título principal */
+/* Cabeçalho principal */
 h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  color: #222;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1e2a38;
 }
 
-/* Imagem do logo */
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #1e2a38;
+}
+
+
+/* Logo */
 .logo {
-  width: 250px;
-  max-width: 90%;
-  margin: 20px auto;
   display: block;
+  margin: 0 auto 1.5rem auto;
+  max-width: 200px;
+  height: auto;
 }
 
-/* Parágrafos */
+/* Parágrafo de introdução */
 p {
-  font-size: 1.1em;
-  margin: 20px 0;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
-/* Links em bloco */
+/* Links de navegação */
 .links-flex {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin: 20px 0;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
 }
 
 .links-flex a {
   text-decoration: none;
   color: white;
-  background-color: #4CAF50;
-  padding: 10px 20px;
+  background-color: #2e86de;
+  padding: 0.75rem 1.5rem;
   border-radius: 8px;
-  transition: background-color 0.3s;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Animação ao passar o cursor */
 .links-flex a:hover {
-  background-color: #45a049;
+  background-color: #1e5f9b;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Kahoot links simulados */
-a:not(.links-flex a) {
-  display: inline-block;
-  margin: 5px 10px;
-  text-decoration: underline;
-  color: #0066cc;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-a:not(.links-flex a):hover {
-  color: #004499;
-}
+/* Imagem de patrocínio fixa */
 .patrocinio {
   position: fixed;
   bottom: 10px;
   right: 10px;
-  width: 280px; /* Aumentado de 120px para 180px */
+  width: 280px;
   z-index: 1000;
 }
 
 .patrocinio img {
   width: 100%;
   height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.patrocinio img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .links-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .links-flex a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .patrocinio {
+    width: 90%;
+    right: 5%;
+  }
+}
+/* Estilo para os links Kahoot */
+.kahoot-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.kahoot-links a {
+  text-decoration: none;
+  color: white;
+  background-color: #20c997;
+  padding: 0.75rem 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kahoot-links a:hover {
+  background-color: #159b77;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsivo para os Kahoots */
+@media (max-width: 600px) {
+  .kahoot-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .kahoot-links a {
+    width: 100%;
+    text-align: center;
+  }
 }

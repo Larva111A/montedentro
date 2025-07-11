@@ -1,91 +1,137 @@
-    body {
-    background-color: gray;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 20px;
-    }
-    h1 {
-    font-size: 2em;
-    font-weight: bold;
-    }
-    h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    }
-    .downloads {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Menor espaço entre os blocos */
-    flex-wrap: wrap;
-    }
-    .downloads div {
-    background-color: white;
-    padding: 0px 15px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-    width: 200px;
-    height: 120px; /* Menor altura */
-    display: flex;
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f8;
+  color: #333;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+/* Títulos principais */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1e2a38;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #444;
+}
+
+/* Logo */
+img {
+  display: block;
+  margin: 0 auto 2rem auto;
+  max-width: 200px;
+  height: auto;
+}
+
+/* Seção de downloads */
+.downloads {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.downloads div {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  max-width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.downloads div:hover {
+  transform: translateY(-5px);
+}
+
+/* Botões de download */
+.downloads a {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  background-color: #2e86de;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 500;
+}
+
+.downloads a:hover {
+  background-color: #1e5f9b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.voltar {
+  text-align: center;
+  margin-top: 2rem;
+}
+/* Estilo direto para .voltar a (menos recomendado) */
+.voltar a {
+  text-decoration: none;
+  background-color: #2e86de;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 500;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.voltar a:hover {
+  background-color: #1e5f9b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Imagem de patrocínio fixa */
+.patrocinio {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 280px;
+  z-index: 1000;
+}
+
+.patrocinio img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.patrocinio img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 700px) {
+  .downloads {
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-    text-align: center;
-    }
-    .downloads h3 {
-    font-size: 1em;
-    flex-grow: 1; /* Ocupa o espaço restante */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    }
-    .downloads a {
-    color: blue;
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-    }
-    a {
-    color: blue;
-    text-decoration: none;
-    font-weight: bold;
-    }
-    a:hover {
-    text-decoration: underline;
-    }
-    img {
-    margin-top: 20px;
-    margin-bottom: 10px; /* Aproxima da secção de downloads */
-    max-width: 250px;
-    }
-    div:last-of-type a {
-    display: inline-block;
-    margin-top: 20px; /* Aumentado de 20px para 50px */
-    font-size: 0.9em;
-    }
-    .patrocinio {
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    width: 280px;
-    z-index: 1000;
-    }
-    .patrocinio img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-    }
-    .voltar {
-    margin-top: 60px;
-    }
-    .voltar a {
-    font-size: 1em;
-    font-weight: bold;
-    color: blue;
-    text-decoration: none;
-    display: inline-block;
-    }
-    .voltar a:hover {
-    text-decoration: underline;
-    }
+  }
+
+  .patrocinio {
+    width: 90%;
+    right: 5%;
+  }
+}
