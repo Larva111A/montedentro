@@ -1,41 +1,69 @@
-    <!DOCTYPE html>
-    <html lang="pt">
-    <head>
-    <meta charset="UTF-8">
-    <title>Jogo de Cibersegurança</title>
-    <link rel="stylesheet" href="jogo.css">
-    </head>
-    <body>
-    <h1>Jogo de cibersegurança</h1> 
-    <h2>Acede aos conteúdos do jogo</h2>
-    <div>
-    <img src="../imagens/montedentro.png" alt="Monte Dentro">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Cibersegurança - Monte Dentro</title>
+  <link rel="shortcut icon" href="../imagens/montedentro.png" type="image/x-icon">
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="../index.html"><img src="../imagens/montedentro.png" alt="Logo Monte Dentro" class="logo-navbar"></a>
+    <div class="nav-links">
+      <a href="../index.html">Início</a>
+      <a href="../subpag1.html">Kahoots</a>
+      <a href="../subpag2.html">Redes Sociais</a>
+      <a href="jogo.html">Jogo</a>
     </div>
-<div class="downloads">
-<div>
-    <h3>Faz download das cartas do jogo</h3>
-    <a href="../jogo/downloads/Cartas do jogo.zip" download>Descarregar Cartas</a>
-</div>
-<div>
-    <h3>Faz download das regras do jogo</h3>
-    <a href="../jogo/downloads/Regras do jogo.zip" download>Descarregar Regras do Jogo</a>
-</div>
-<div>
-    <h3>Faz download da imagem do tabuleiro do jogo</h3>
-    <a href="../jogo/downloads/Tabuleiro.zip" download>Descarregar Imagem do Tabuleiro</a>
-</div>
-</div>
-
-<div class="voltar">
-<a href="../index.html">Voltar ao início</a>
-</div>
-</body>
-
-    </body>
-
-    <div class="patrocinio">
-<a href="#">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Alternar modo escuro/claro">
+      <span id="theme-icon">🌙</span>
+    </button>
+  </nav>
+  <main>
+    <img src="../imagens/montedentro.png" alt="Monte Dentro" class="logo">
+    <h1>Jogo de Cibersegurança</h1>
+    <h2>Acede aos conteúdos do jogo</h2>
+    <section class="downloads">
+      <div>
+        <h3>Faz download das cartas do jogo</h3>
+        <a href="downloads/Cartas do jogo.zip" download>Descarregar Cartas</a>
+      </div>
+      <div>
+        <h3>Faz download das regras do jogo</h3>
+        <a href="downloads/Regras do jogo.zip" download>Descarregar Regras do Jogo</a>
+      </div>
+      <div>
+        <h3>Faz download da imagem do tabuleiro do jogo</h3>
+        <a href="downloads/Tabuleiro.zip" download>Descarregar Imagem do Tabuleiro</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Monte Dentro. Desenvolvido por <a href="https://www.instagram.com/tomas.rolo.56/" target="_blank">Tomás Rolo</a> |
+    <a href="../subpag2.html">Redes Sociais</a> |
+    <a href="../subpag1.html">Kahoots</a> |
+    <a href="jogo.html">Jogo</a>
+  </footer>
+  <div class="footer-patrocinio">
     <img src="../Imagem WhatsApp 2025-05-21 às 15.03.02_cb8b9f1b.jpg" alt="Patrocínios">
-</a>
-</div>
-    </html>
+  </div>
+  <script>
+    // Alternância de tema escuro/claro
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    function setTheme(dark) {
+      document.body.classList.toggle('dark-mode', dark);
+      themeIcon.textContent = dark ? '☀️' : '🌙';
+      localStorage.setItem('dark-mode', dark ? '1' : '0');
+    }
+    themeToggle.addEventListener('click', () => {
+      setTheme(!document.body.classList.contains('dark-mode'));
+    });
+    // Inicialização
+    const darkPref = localStorage.getItem('dark-mode') === '1';
+    setTheme(darkPref);
+  </script>
+</body>
+</html>

@@ -1,25 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Monte Dentro</title>
-<link rel="stylesheet" href="subpag2.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redes Sociais - Monte Dentro</title>
+  <link rel="shortcut icon" href="./imagens/montedentro.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <script src="index.js" defer></script>
 </head>
 <body>
-<h1>Bem-vindo ao website monte dentro!</h1>
-<img src="imagens/montedentro.png" alt="Logo montedentro" class="logo">
-<p>Aqui abaixo pode encontrar as várias subdivisões da nossa página.</p>
-<div class="links-flex">
-<a href="subpag1.html">Ir para Subpágina 2</a>
-<a href="index.html">Voltar ao início</a>
-</div>
-
-</body>
-
-    <div class="patrocinio">
-<a href="#">
+  <nav class="navbar">
+    <a href="index.html"><img src="imagens/montedentro.png" alt="Logo Monte Dentro" class="logo-navbar"></a>
+    <div class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="subpag1.html">Kahoots</a>
+      <a href="subpag2.html">Redes Sociais</a>
+      <a href="jogo/jogo.html">Jogo</a>
+    </div>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Alternar modo escuro/claro">
+      <span id="theme-icon">🌙</span>
+    </button>
+  </nav>
+  <main>
+    <img src="./imagens/montedentro.png" alt="Logo" class="logo">
+    <h1>Monte Dentro</h1>
+    <section class="links-flex social">
+      <a href="https://github.com/Larva111A" target="_blank"><i class="bi bi-github"></i> Github</a>
+      <a href="https://www.instagram.com/montedentro.e9g/" target="_blank"><i class="bi bi-instagram"></i> Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=100081487775127" target="_blank"><i class="bi bi-facebook"></i> Facebook</a>
+      <a href="https://terrasdentro.pt/" target="_blank"><i class="bi bi-browser-chrome"></i> Website</a>
+    </section>
+    <div class="card-list">
+      <div class="card">
+        <span>Github</span>
+        <button class="btn" onclick="copyToClipboard('https://github.com/Larva111A')">Copiar link</button>
+      </div>
+      <div class="card">
+        <span>Instagram</span>
+        <button class="btn" onclick="copyToClipboard('https://www.instagram.com/montedentro.e9g/')">Copiar link</button>
+      </div>
+      <div class="card">
+        <span>Facebook</span>
+        <button class="btn" onclick="copyToClipboard('https://www.facebook.com/profile.php?id=100081487775127')">Copiar link</button>
+      </div>
+      <div class="card">
+        <span>Website</span>
+        <button class="btn" onclick="copyToClipboard('https://terrasdentro.pt/')">Copiar link</button>
+      </div>
+    </div>
+  </main>
+  <footer>
+    &copy; 2025 Monte Dentro. Desenvolvido por <a href="https://www.instagram.com/tomas.rolo.56/" target="_blank">Tomás Rolo</a> |
+    <a href="subpag2.html">Redes Sociais</a> |
+    <a href="subpag1.html">Kahoots</a> |
+    <a href="jogo/jogo.html">Jogo</a>
+  </footer>
+  <div class="footer-patrocinio">
     <img src="../Imagem WhatsApp 2025-05-21 às 15.03.02_cb8b9f1b.jpg" alt="Patrocínios">
-</a>
-</div>
+  </div>
+  <script>
+    // Alternância de tema escuro/claro
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    function setTheme(dark) {
+      document.body.classList.toggle('dark-mode', dark);
+      themeIcon.textContent = dark ? '☀️' : '🌙';
+      localStorage.setItem('dark-mode', dark ? '1' : '0');
+    }
+    themeToggle.addEventListener('click', () => {
+      setTheme(!document.body.classList.contains('dark-mode'));
+    });
+    // Inicialização
+    const darkPref = localStorage.getItem('dark-mode') === '1';
+    setTheme(darkPref);
+    // Script copiar link
+    function copyToClipboard(url) {
+      navigator.clipboard.writeText(url);
+      alert('Link copiado!');
+    }
+  </script>
+</body>
 </html>

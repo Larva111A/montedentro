@@ -3,33 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monte Dentro</title>
-  <link rel="stylesheet" href="subpag1.css">
+  <title>Kahoots - Monte Dentro</title>
+  <link rel="shortcut icon" href="./imagens/montedentro.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Bem-vindo ao website Monte Dentro!</h1>
-  <img src="imagens/montedentro.png" alt="Logo Monte Dentro" class="logo">
-  
-  <p>Aqui abaixo pode encontrar as várias subdivisões da nossa página.</p>
-  <div class="links-flex">
-    <a href="subpag2.html">Ir para Subpágina 2</a>
-    <a href="index.html">Voltar ao início</a>
+  <nav class="navbar">
+    <a href="index.html"><img src="imagens/montedentro.png" alt="Logo Monte Dentro" class="logo-navbar"></a>
+    <div class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="subpag1.html">Kahoots</a>
+      <a href="subpag2.html">Redes Sociais</a>
+      <a href="jogo/jogo.html">Jogo</a>
+    </div>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Alternar modo escuro/claro">
+      <span id="theme-icon">🌙</span>
+    </button>
+  </nav>
+  <main>
+    <img src="imagens/montedentro.png" alt="Logo Monte Dentro" class="logo">
+    <h1>Kahoots Monte Dentro</h1>
+    <p class="text-center muted">Abaixo pode encontrar os nossos Kahoots e acessá-los de forma fácil.</p>
+    <section>
+      <h2>Kahoots</h2>
+      <div class="kahoot-links">
+        <a href="https://create.kahoot.it/course/9b8bc4db-ac6e-4217-89da-1c9c62e36915" target="_blank">Kahoot 1</a>
+        <a href="https://create.kahoot.it/course/9ae1162e-3ec0-4567-ab8a-e447de87cc8b" target="_blank">Kahoot 2</a>
+        <a href="https://create.kahoot.it/course/9a3da7fd-ff08-42e9-8834-292da515ab38" target="_blank">Kahoot 3</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Monte Dentro. Desenvolvido por <a href="https://www.instagram.com/tomas.rolo.56/" target="_blank">Tomás Rolo</a> |
+    <a href="subpag2.html">Redes Sociais</a> |
+    <a href="subpag1.html">Kahoots</a> |
+    <a href="jogo/jogo.html">Jogo</a>
+  </footer>
+  <div class="footer-patrocinio">
+    <img src="../Imagem WhatsApp 2025-05-21 às 15.03.02_cb8b9f1b.jpg" alt="Patrocínios">
   </div>
-
-  <h2>Kahoots</h2>
-  <p>Aqui pode encontrar os nossos Kahoots e acessá-los de forma fácil:</p>
-
-  <div class="kahoot-links">
-    <a href="https://create.kahoot.it/course/9b8bc4db-ac6e-4217-89da-1c9c62e36915" target="_blank">Kahoot 1</a>
-    <a href="https://create.kahoot.it/course/9ae1162e-3ec0-4567-ab8a-e447de87cc8b" target="_blank">Kahoot 2</a>
-    <a href="https://create.kahoot.it/details/e974fb72-aee1-414b-8017-47f4f3ee1e70c" target="_blank">Kahoot 3</a>
-
-  </div>
-
-  <div class="patrocinio">
-    <a href="#">
-      <img src="../Imagem WhatsApp 2025-05-21 às 15.03.02_cb8b9f1b.jpg" alt="Patrocínios">
-    </a>
-  </div>
+  <script>
+    // Alternância de tema escuro/claro
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    function setTheme(dark) {
+      document.body.classList.toggle('dark-mode', dark);
+      themeIcon.textContent = dark ? '☀️' : '🌙';
+      localStorage.setItem('dark-mode', dark ? '1' : '0');
+    }
+    themeToggle.addEventListener('click', () => {
+      setTheme(!document.body.classList.contains('dark-mode'));
+    });
+    // Inicialização
+    const darkPref = localStorage.getItem('dark-mode') === '1';
+    setTheme(darkPref);
+  </script>
 </body>
 </html>

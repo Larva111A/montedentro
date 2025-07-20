@@ -1,24 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Monte Dentro</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monte Dentro</title>
+  <link rel="shortcut icon" href="./imagens/montedentro.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1>Bem-vindo ao website monte dentro!</h1>
-<img src="imagens/montedentro.png" alt="Logo montedentro" class="logo">
-<p>Aqui pode encontrar as subdivisões do website</p>
-<div class="links-flex">
-<a href="subpag1.html">Subpágina 1</a>
-<a href="subpag2.html">Subpágina 2</a>
-<a href="jogo/jogo.html">Jogo sobre sibersegurança digital</a>
-</div>
-</body>
-<div class="patrocinio">
-  <a href="#">
+  <nav class="navbar">
+    <a href="index.html"><img src="imagens/montedentro.png" alt="Logo Monte Dentro" class="logo-navbar"></a>
+    <div class="nav-links">
+      <a href="index.html">Início</a>
+      <a href="subpag1.html">Kahoots</a>
+      <a href="subpag2.html">Redes Sociais</a>
+      <a href="jogo/jogo.html">Jogo</a>
+    </div>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Alternar modo escuro/claro">
+      <span id="theme-icon">🌙</span>
+    </button>
+  </nav>
+  <main>
+    <img src="imagens/montedentro.png" alt="Logo Monte Dentro" class="logo">
+    <h1>Bem-vindo ao Monte Dentro</h1>
+  </main>
+  <footer>
+    &copy; 2025  Monte Dentro. Desenvolvido por <a href="https://www.instagram.com/tomas.rolo.56/" target="_blank">Tomás Rolo</a> |
+    <a href="subpag2.html">Redes Sociais</a> |
+    <a href="subpag1.html">Kahoots</a> |
+    <a href="jogo/jogo.html">Jogo</a>
+  </footer>
+  <div class="footer-patrocinio">
     <img src="Imagem WhatsApp 2025-05-21 às 15.03.02_cb8b9f1b.jpg" alt="Patrocínios">
-  </a>
-</div>
+  </div>
+  <script>
+    // Alternância de tema escuro/claro
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    function setTheme(dark) {
+      document.body.classList.toggle('dark-mode', dark);
+      themeIcon.textContent = dark ? '☀️' : '🌙';
+      localStorage.setItem('dark-mode', dark ? '1' : '0');
+    }
+    themeToggle.addEventListener('click', () => {
+      setTheme(!document.body.classList.contains('dark-mode'));
+    });
+    // Inicialização
+    const darkPref = localStorage.getItem('dark-mode') === '1';
+    setTheme(darkPref);
+  </script>
+</body>
 </html>
